@@ -1,12 +1,9 @@
-// frontend/src/lib/socket.js
 import { io } from "socket.io-client";
 
-// 👇 Replace with your PC's actual IP
-const URL = "http://192.168.1.35:3001"; // ✅ NOT localhost
+// Replace this with your actual backend Render URL
+const BACKEND_URL = "https://zero-chat.onrender.com";
 
-const socket = io(URL, {
-  autoConnect: false,
-  transports: ["websocket"], // ✅ ensures full WebSocket
+// Create the Socket.IO client instance
+export const socket = io(BACKEND_URL, {
+  transports: ["websocket"],
 });
-
-export default socket;
